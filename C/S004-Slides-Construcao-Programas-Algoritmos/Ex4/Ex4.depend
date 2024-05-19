@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1691100836 source:c:\users\anton\desktop\projetoteste\ex4\main.c
+	<stdio.h>
+	<stdlib.h>
+

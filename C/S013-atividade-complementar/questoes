@@ -1,0 +1,57 @@
+1. Escreva um programa completo em C, usando funções, que leia um vetor e mostre a mensagem “VETOR 
+ORDENADO.” ou “VETOR NÃO ORDENADO.” caso o vetor esteja ordenado ou não.
+
+Considerações:
+
+a. Escreva uma função que armazene os números no vetor (os números podem ser lidos pelo usuário ou gerados aleatoriamente).
+
+b. Escreva uma função que mostre o vetor.
+
+c. Escreva uma função que retorne 1 se o vetor estiver ordenado e -1 em caso contrário.
+
+ 
+
+2. Na teoria dos sistemas, define-se o elemento MINMAX de uma matriz como o maior elemento da linha em que 
+se encontra o menor elemento da matriz. Escreva um programa, usando funções, que receba uma matriz 4x7 com 
+números inteiros e calcule o MINMAX e a sua posição (linha e coluna).
+
+Considerações:
+
+a. Escreva uma função que armazene os números na matriz (os números podem ser lidos pelo usuário ou gerados 
+aleatoriamente).
+
+b. Escreva uma função que mostre a matriz formatada.
+
+c. Escreva uma função que receba como parâmetro a matriz e retorne o MINMAX e a sua posição (linha e coluna).
+
+ 
+
+3. Escreva um programa completo em C, usando funções, que leia um vetor e particione os elementos do vetor
+pelo seu valor médio, gerando dois outros vetores: o primeiro contendo os elementos que tenham valores 
+menores que a média, e o segundo contendo os elementos com valores maiores ou iguais à média. Por exemplo, o 
+vetor V ilustrado abaixo gera como resultado os vetores V1 e V2, uma vez que a média dos elementos em V é 33.
+85.
+
+V: 10 15 3 7 87 101 14
+
+V1: 10 15 3 7 14
+
+V2: 87 101
+
+Considerações:
+
+a. Escreva uma função que armazene os números no vetor (os números podem ser lidos pelo usuário ou gerados 
+aleatoriamente).
+
+b. Escreva uma função que mostre o vetor. A mesma função deverá ser usada para mostrar o vetor V e os 
+vetores particionados, V1 e V2.
+
+c) Utilize as definições:
+
+#define MAX 100
+
+int V[MAX];
+
+d) Você deve obrigatoriamente escrever uma função para calcular a média dos elementos do vetor.
+
+e) Escreva uma função que particiona os elementos do vetor V pelo seu valor médio.

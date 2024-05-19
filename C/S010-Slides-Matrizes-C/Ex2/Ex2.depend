@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1696507506 source:c:\users\aluno\desktop\0310matrizes\ex2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

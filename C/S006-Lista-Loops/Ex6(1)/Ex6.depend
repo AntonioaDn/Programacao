@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1692920211 source:c:\users\anton\desktop\projetoteste\exerciciospraticos\ex6\main.c
+	<stdio.h>
+	<stdlib.h>
+
