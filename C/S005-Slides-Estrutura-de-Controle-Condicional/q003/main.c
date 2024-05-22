@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 /*
-Faça um programa para ler 3 valores e escrever a somados 2 maiores. Considere que o usuário não informará valores iguais.
+Faï¿½a um programa para ler 3 valores e escrever a somados 2 maiores. Considere 
+que o usuï¿½rio nï¿½o informarï¿½ valores iguais.
 */
 int main()
 {
