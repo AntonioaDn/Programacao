@@ -8,3 +8,6 @@ Aula 20: Usando botão e função
 Manipulando elementos do DOM:
 Aula 30: getElementById
 Aula 31: getElementByTagName
+Aula 32: getElementsByClassName
+Aula 33: querySelector e querySelectorAll
+Aula 34: addEventListener
