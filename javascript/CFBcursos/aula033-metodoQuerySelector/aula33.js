@@ -13,11 +13,17 @@ const time_especial = document.getElementById("d1")
 // Para retornar o elemento a partir de um id, passar como parametro 
 // um # e o nome da classe da seguinte forma: "#id" -> linha 21
 
+// Pegando tag:
 const query_div = document.querySelector("div")
+// Pegando tag:
 const query_div_todas = [...document.querySelectorAll("div")]
+// Pegando classe:
 const query_times_todos = [...document.querySelectorAll(".times")]
+// Pegando classe:
 const query_times_serieA = [...document.querySelectorAll(".serieA")]
+// Pegando classe:
 const query_times_serieB = [...document.querySelectorAll(".serieB")]
+// Pegando id:
 const query_time_especial = document.querySelector("#d1")
 // Maneira de pegar apenas as divs que possuem o atributo class
 const query_classes = [...document.querySelectorAll("div[class]")]
