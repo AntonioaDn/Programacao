@@ -17,4 +17,11 @@ button1.addEventListener("click", (evt) => {
     selecionados.map((el) => {
         caixa2.appendChild(el)
     })
+    const divs_caixa2 = [...caixa2.children]
+    divs_caixa2.map((el) => {
+        // Maneira alternativa de fazer: [...document.querySelectorAll(".curso:not(.selecionado)")]
+        if (!(el.classList.contains("selecionado"))) {
+            caixa1.appendChild(el)
+        }
+    })
 })
