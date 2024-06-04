@@ -4,6 +4,7 @@ Como receber entrada de dados do usuário
 Defer em HTML
 
 Aula 20: Usando botão e função
+Aula 42: Método filter
 
 Manipulando elementos do DOM:
 Aula 30: getElementById
@@ -17,5 +18,3 @@ Aula 39: Relação dos elementos do DOM
 Aula 40: Criando novos elementos e adicionando ao DOM
 Aula 41: Removendo elementos do DOM
 Aula 44: Removendo elementos do DOM de forma eficiente
-
-Aula 42: Método filter
