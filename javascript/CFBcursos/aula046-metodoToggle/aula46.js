@@ -32,14 +32,9 @@ const criarCurso = (curso) => {
 }
 
 const divSelecionado = () => {
-    const todasDivs = [...document.querySelectorAll(".curso")]
-    const selecionado = todasDivs.filter((el, i) => {
-        if (el.classList.contains("selecionado")){
-            return el
-        }
-    })
+    const selecionado = document.querySelector(".selecionado")
 
-    return selecionado[0]
+    return selecionado
 
 }
 
