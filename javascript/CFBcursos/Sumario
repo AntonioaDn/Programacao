@@ -18,4 +18,5 @@ Aula 39: Relação dos elementos do DOM
 Aula 40: Criando novos elementos e adicionando ao DOM
 Aula 41: Removendo elementos do DOM
 Aula 44: Removendo elementos do DOM de forma eficiente
-Aula 45: Criando elementos antes ou depois de outro já existente
+Aula 45: Criando elementos antes ou depois de outro já existente com insertBefore
+Aula 46: Metodo toggle para adicionar ou remover uma classe 
