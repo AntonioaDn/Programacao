@@ -1,0 +1,45 @@
+* {
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: large;
+    border: none;
+    margin: 0px
+}
+
+body {
+    margin: 5px;
+}
+
+.caixa {
+    border: 5px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+}
+
+.verde {
+    border-color: rgb(20, 120, 23) !important;
+    background-color: rgb(220, 255, 225) !important;
+}
+
+.azul {
+    display: flex;
+    border: solid 5px blue;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.vermelho {
+    border-color: red !important;
+    background-color: rgb(255, 220, 220) !important;
+}
+
+.azul > * {
+    width: 200px;
+    margin: 5px;
+    border-radius: 5px;
+}
