@@ -14,6 +14,6 @@ const divs = [...document.querySelectorAll("div")]
 divs.map((el) => {
     el.addEventListener("click", (evt) => {
         const div = evt.target
-        div.classList.add("destaque")
+        div.classList.toggle("destaque")
     })
 })

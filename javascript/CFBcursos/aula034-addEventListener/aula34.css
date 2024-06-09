@@ -1,4 +1,13 @@
-.times {
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+div, .times {
     display: flex;
     justify-content: center;
     width: 200px;
@@ -9,7 +18,7 @@
     cursor: pointer;
 }
 
-.times:hover {
+div:hover, .times:hover {
     border-color: #f00;
 }
 
