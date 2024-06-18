@@ -1,29 +1,27 @@
 body {
     margin:0;
-    text-align: center;
     color: #0E7B9C;
+    text-align: center;
     font-family: 'Orbitron', sans-serif;
 }
 
-.main-section{
-    text-align: center;    
+#hero{
     background-image: url(images/galaxy.webp);
     background-size: cover;
     padding: 10px 0 40px 0;
-    
 }
 
-.logo-main {
-    width:100px;
+#logo-main {
+    width: 100px;
 }
 
 .btn {
-    background: white;
-    font-family: inherit;
-    color: inherit;
-    font-weight: 800;
     padding: 6px 12px;
+    background: white;
     border: none;
+    font-family: 'Orbitron', sans-serif;
+    color: #0E7B9C;
+    font-weight: 800;
 }
 
 #title {
