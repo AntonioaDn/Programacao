@@ -1,14 +1,33 @@
 body {
-    margin: 0;
-    background: linear-gradient(skyblue, pink);
-    color: white;
-    text-shadow: 0px 0px 1px black;
     text-align: center;
     font-family: "Happy Monkey", system-ui;
+    background: linear-gradient(#a2d2ff, pink);
+    color: white;
 }
 
 h1, h2, h3, h4, p {
     text-shadow: 0 0 1px black;
+}
+
+#nick-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 6px solid #EFB0C9;
+    margin-bottom: 10px;
+}
+
+#nick-age {
+    background: #EFB0C9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0 10 0;
+}
+
+#nick-bday {
+    margin: 0;
+    background: #EFB0C9;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .header {
@@ -17,48 +36,30 @@ h1, h2, h3, h4, p {
     align-items: center;
 }
 
-#nick-img {
-    display: block;
-    margin: 0px auto 10px auto;
-    width: 150px;
-    border-radius: 50%;
-    border: 6px solid #EFB0C9;
-}
-
-#nick-age {
-    background: #EFB0C9;
-    margin: 5px auto;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-#nick-bday {
-    margin: 5px auto 30px auto;
-    background: #EFB0C9;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
 
 
 .gift-div {
-    display: flex;
-    flex-direction: column;
-    margin: 5px auto;
-}
-
-.gift-img {
-    background-image: url(images/gift-cover.jpg);
-    max-width: 400px;
-    height: 400px;
-    background-size: cover;
-    margin: 20px auto;
-    border: 6px solid white;
-    border-radius: 6px;
+    margin-top: 50px;
 }
 
 .gift-title {
-    margin: 0 auto;
+    margin-bottom: 10px;
 }
+
+.gift-hint {
+    margin-top: 0; 
+}
+
+.gift-img {
+    margin: 20px auto;
+    max-width: 400px;
+    height: 400px;
+    border: 6px solid white;
+    border-radius: 10px;
+    background-image: url(images/gift-cover.jpg);
+    background-size: cover;
+}
+
 
 #happy-gif:hover {
     background-image: url(images/happy.gif);
@@ -86,9 +87,9 @@ h1, h2, h3, h4, p {
 }
 
 #footer {
-    width: 400px;
-    margin: 40px auto 20px auto;
     font-style: italic;
+    width: 400px;
+    margin: 40px auto 20px;
 }
 
 a {
