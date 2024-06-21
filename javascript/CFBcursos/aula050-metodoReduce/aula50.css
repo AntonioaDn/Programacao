@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 5px;
+}
+
+#first {
+    margin-top: 10px;
+}
+
+.caixa {
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.verde {
+    background: lightgreen;
+    border: 4px solid darkgreen;
+}
+
+.vermelho {
+    background: lightsalmon;
+    border: 4px solid darkred;
+}
+
+.azul {
+    background: skyblue;
+    border: 4px solid darkblue;
+    
+}
+
+#reduce-btn {
+    background: mediumblue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}

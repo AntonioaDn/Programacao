@@ -4,8 +4,6 @@ Como receber entrada de dados do usuário
 Defer em HTML
 
 Aula 20: Usando botão e função
-Aula 42: Método filter
-Aula 47: Método Find
 
 Manipulando elementos do DOM:
 Aula 30: getElementById
@@ -21,3 +19,13 @@ Aula 41: Removendo elementos do DOM
 Aula 44: Removendo elementos do DOM de forma eficiente
 Aula 45: Criando elementos antes ou depois de outro já existente com insertBefore
 Aula 46: Metodo toggle para adicionar ou remover uma classe 
+
+Manipulando iteraveis:
+Aula 12: Operador Spread
+Aula 28: Metodo Map
+Aula 42: Metodo Filter
+Aula 47: Metodo Find
+Aula 48: Metodo Every
+Aula 49: Metodo Some
+Aula 50: Metodo Reduce
+Aula 51: System.iterator
