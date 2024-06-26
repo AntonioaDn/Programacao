@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: large;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+input {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.radio {
+    width: auto;
+}
