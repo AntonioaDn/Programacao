@@ -1,49 +1,55 @@
-const radio_militar = document.querySelector("#r_militar")
-const radio_normal = document.querySelector("#r_normal")
-const t_blindagem = document.querySelector("#t_blindagem")
-const t_municao = document.querySelector("#t_municao")
-const t_nome = document.querySelector("#t_nome")
-const t_portas = document.querySelector("#t_portas")
-const btn_adicionar = document.querySelector("#adicionar")
+const input_nome = document.querySelector("#input_nome")
+const input_portas = document.querySelector("#input_portas")
+const input_blindagem = document.querySelector("#input_blindagem")
+const input_municao = document.querySelector("#input_municao")
+const radio_militar = document.querySelector("#radio_militar")
+const radio_normal = document.querySelector("#radio_normal")
+const btn_adicionar = document.querySelector("#btn_adicionar")
 const carros = document.querySelector("#carros")
-let arr_carros = []
+const arr_carros = []
 
 radio_militar.addEventListener("click", () => {
-    t_blindagem.disabled = false;
-    t_municao.disabled = false;
-});
+    input_blindagem.disabled = false
+    input_municao.disabled = false
+})
 
 radio_normal.addEventListener("click", () => {
-    t_blindagem.disabled = true
-    t_municao.disabled = true
-    t_blindagem.value = 0
-    t_municao.value = 0
+    input_blindagem.disabled = true
+    input_municao.disabled = true
+    input_blindagem.value = 0
+    input_municao.value = 0
 })
 
 btn_adicionar.addEventListener("click", () => {
-    if (radio_militar.cheked) {
-        try {
-            let c = new Militar(t_nome.value, t_portas.value, t_blindagem.value, t_municao.value)
-            let div_carro = document.createElement("div")
-            div_carro.classList.add("carro")
-            div_carro.innerHTML = c.info()
+    try {
+        let nome = input_nome.value
+        let portas = input_portas.value
+        let blindagem = input_blindagem.value
+        let municao = input_municao.value
+        let div_carro = document.createElement("div")
+        div_carro.setAttribute("class", "carro")
+        let btn_remover = document.createElement("button")
+        btn_remover.innerHTML = "remover"
+        if (radio_militar.checked) {
+            let carro_militar = new Militar(nome, portas, blindagem, municao)
+            div_carro.innerHTML = carro_militar.info()
             carros.appendChild(div_carro)
-            arr_carros.push(c)
-        } catch (er) {
-            alert("Preenhca todos os campos corretamente")
-        }
-    } else {
-        try {
-            let c = new Carro(t_nome.value, t_portas.value)
-            let div_carro = document.createElement("div")
-            div_carro.classList.add("carro")
-            div_carro.innerHTML = c.info()
+            arr_carros.push(carro_militar)
+        } else {
+            let carro_normal = new Carro(nome, portas)
+            div_carro.innerHTML = carro_normal.info()
             carros.appendChild(div_carro)
-            arr_carros.push(c)
-        } catch (error) {
-            alert("Preenhca todos os campos corretamente")
-            
+            arr_carros.push(carro_normal)
         }
+        btn_remover.addEventListener("click", (evt) => {
+            carros.removeChild(evt.target.parentNode)
+            // Continuar daqui.
+        })
+        div_carro.appendChild(btn_remover)
+        console.log(arr_carros)
+
+    } catch (error) {
+        
     }
 })
 
