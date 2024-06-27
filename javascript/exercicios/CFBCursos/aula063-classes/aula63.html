@@ -9,22 +9,26 @@
 <body>
     <h1>Exercicio sobre classes</h1>
     <label>Nome</label>
-    <input type="text">
+    <input type="text" id="t_nome">
     <label>Portas</label>
-    <input type="text" value="0">
+    <input type="text" value="0" id="t_portas">
     <label>Blindagem</label>
-    <input type="text">
+    <input type="number" value="0" disabled id="t_blindagem">
     <label>Munição</label>
-    <input type="text">
-    <script src="aula63.js"></script>
+    <input type="number" value="0" disabled id="t_municao">
     <label>Tipo:</label>
     <div>
-        <input type="radio" class="radio">
+        <input type="radio" class="radio" id="r_militar" name="r_tipo">
         <label>Militar</label>
     </div>
     <div>
-        <input type="radio" class="radio">
+        <input type="radio" class="radio" id="r_normal" name="r_tipo">
         <label>Normal</label>
     </div>
+    <button id="adicionar">Adicionar!</button>
+    <div class="carros" id="carros">
+
+    </div>
+    <script src="aula63.js"></script>
 </body>
 </html>
