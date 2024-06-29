@@ -4,6 +4,8 @@ Como receber entrada de dados do usuário
 Defer em HTML
 
 Aula 20: Usando botão e função
+Aula 56: Manipulando Strings de forma mais fácil com o Template String
+Aula 57-62: Manipulando classes e objetos 
 
 Manipulando elementos do DOM:
 Aula 30: getElementById
@@ -29,3 +31,6 @@ Aula 48: Metodo Every
 Aula 49: Metodo Some
 Aula 50: Metodo Reduce
 Aula 51: System.iterator
+Aula 52, 53: Manipulando arrays
+AUla 54: Manipulando estrutura Map
+AUla 55: Manipulando estrutura Set
