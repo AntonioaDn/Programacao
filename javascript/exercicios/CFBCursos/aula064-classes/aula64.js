@@ -6,7 +6,7 @@ const radio_militar = document.querySelector("#radio_militar")
 const radio_normal = document.querySelector("#radio_normal")
 const btn_adicionar = document.querySelector("#btn_adicionar")
 const carros = document.querySelector("#carros")
-const arr_carros = []
+let arr_carros = []
 
 radio_militar.addEventListener("click", () => {
     input_blindagem.disabled = false
@@ -42,11 +42,16 @@ btn_adicionar.addEventListener("click", () => {
             arr_carros.push(carro_normal)
         }
         btn_remover.addEventListener("click", (evt) => {
-            carros.removeChild(evt.target.parentNode)
             // Continuar daqui.
+            arr_carros = arr_carros.filter((el) => {
+                if (!((el.info() + "<button>remover</button>") == evt.target.parentNode.innerHTML)) {
+                    return el
+                }
+            })
+            carros.removeChild(evt.target.parentNode)
+            console.log(arr_carros)            
         })
         div_carro.appendChild(btn_remover)
-        console.log(arr_carros)
 
     } catch (error) {
         
