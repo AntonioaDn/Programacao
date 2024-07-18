@@ -8,10 +8,15 @@ data = {
 }
 
 df = pd.DataFrame(data)
-print(df)
 
 # Adicionando uma nova coluna
-# df['Profissão'] = ['Engenheira', 'Médico', 'Advogado', 'Professor']
+df['Profissão'] = ['Engenheira', 'Médico', 'Advogado', 'Professor']
+
+nova_linha = pd.DataFrame({'Nome': ['Antônio'], 'Idade': [19], 'Cidade': ['Santa Rita']})
+
+df = pd.concat([df, nova_linha], ignore_index=True)
+
+print(df)
 
 # Filtrando pessoas com mais de 30 anos
 # filtro = df[df['Idade'] > 30]
