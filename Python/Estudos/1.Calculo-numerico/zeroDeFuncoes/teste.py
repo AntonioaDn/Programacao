@@ -1,33 +1,32 @@
+# Importações
+import sympy as sp
+import numpy as np
 import pandas as pd
+import plotly.express as px
 
-# Criando o DataFrame
-data = {
-    'Nome': ['Ana', 'Bruno', 'Carlos', 'Diana'],
-    'Idade': [23, 30, 45, 35],
-    'Cidade': ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Curitiba']
-}
+def funcao(x):
+    return x * np.log10(x) - 1
 
-df = pd.DataFrame(data)
+def TVM(x1, x2):
+    return (funcao(x1) * funcao(x2)) < 0
 
-# Adicionando uma nova coluna
-df['Profissão'] = ['Engenheira', 'Médico', 'Advogado', 'Professor']
+def falsa_posicao(x1, x2, e):
+    if not TVM(x1, x2):
+        print(f"Não é possível afirmar que existe uma raiz no intervalo [{x1}, {x2}].")
+        return 
+    else:
+        k = 0
+        vm = (x1 * abs(funcao(x2)) + x2 * abs(funcao(x1)))/(abs(funcao(x1)) + abs(funcao(x2)))
+        while abs(funcao(vm)) >= e:
+            if TVM(x1, vm):
+                x2 = vm
+                vm = (x1 * abs(funcao(x2)) + x2 * abs(funcao(x1)))/(abs(funcao(x1)) + abs(funcao(x2)))
+                k += 1
+            else:
+                x1 = vm
+                vm = (x1 * abs(funcao(x2)) + x2 * abs(funcao(x1)))/(abs(funcao(x1)) + abs(funcao(x2)))
+                k +=1
+            
+        return vm
 
-nova_linha = pd.DataFrame({'Nome': ['Antônio'], 'Idade': [19], 'Cidade': ['Santa Rita']})
-
-df = pd.concat([df, nova_linha], ignore_index=True)
-
-print(df)
-
-# Filtrando pessoas com mais de 30 anos
-# filtro = df[df['Idade'] > 30]
-# print("Pessoas com mais de 30 anos:")
-# print(filtro)
-
-# Ordenando por Idade
-# df_ordenado = df.sort_values(by='Idade')
-# print("\nDataFrame ordenado por Idade:")
-# print(df_ordenado)
-
-# Média de idade
-# media_idade = df['Idade'].mean()
-# print(f'\nMédia de idade: {media_idade}')
+print(falsa_posicao(2, 3, 0.002))
