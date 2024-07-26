@@ -8,7 +8,7 @@ import plotly.express as px
 tabela_falsa_posicao = pd.DataFrame(columns=['k', 'ak', 'bk', 'f(ak)', 'f(bk)', 'x k+1', 'f(x k+1)'])
 
 def funcao(x):
-    return x * np.log10(x) - 1
+    return x**3 - 9*x + 5
 
 def TVM(x1, x2):
     return (funcao(x1) * funcao(x2)) < 0
@@ -43,5 +43,5 @@ def falsa_posicao(x1, x2, e):
 
         return vm
 
-print(falsa_posicao(2, 3, 0.002))
+print(falsa_posicao(0, 1, 0.002))
 print(tabela_falsa_posicao)
