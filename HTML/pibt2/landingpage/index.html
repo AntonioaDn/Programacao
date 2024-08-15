@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="src/styles/styles.css">
     <link rel="stylesheet" href="src/styles/header.css">
     <link rel="stylesheet" href="src/styles/home.css">
+    <link rel="stylesheet" href="src/styles/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Venha conhecer!</title>
 </head>
 <body>
     <header>
-        
         <nav id="navbar">
             <i class="fa-solid fa-cross" id="nav_logo"> PIBT2</i>
             <ul id="nav_list">
@@ -20,10 +20,10 @@
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about">Sobre</a>
+                    <a href="#contact">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#fim">Fim</a>
+                    <a href="#congregacoes">Congregações</a>
                 </li>
             </ul>
 
@@ -58,30 +58,74 @@
     </header>
 
     <main id="content">
-        <section id="home">
-            <div class="shape"></div>
-            <div id="cta">
+        <div id="home_mobile">
+            <div id="banner_mobile">
+                <img id="igreja_mobile" src="src/images/25anos600x400.jpg" alt="Foto anual da igreja">
+            </div>
+            <div id="cta_mobile">
                 <h1 class="title">
                     Sobre esta pedra
                     <span>Cristo</span>
                 </h1>
-
                 <p class="description">
                     Colossenses 1.13-23
                 </p>
-
-                <div class="social-media-buttons">
-                    <a href="#">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
+            </div>
+        </div>
+        <section id="home">
+            <div id="shape">
+                <div id="cta">
+                    <h1 class="title">
+                        Sobre esta pedra
+                        <span>Cristo</span>
+                    </h1>
+    
+                    <p class="description">
+                        Colossenses 1.13-23
+                    </p>
+                </div>
+                <div id="banner">
+                    <img id="igreja" src="src/images/25anos600x400.jpg" alt="Foto anual da igreja">
                 </div>
             </div>
-            <div id="banner">
-                <img id="igreja" src="src/images/25anos600x400.jpg" alt="Foto anual da igreja">
+        </section>
+        <section id="contact">
+            <div id="pix">
+                <button id="btn_pix" class="btn-default">
+                    <i class="fa-brands fa-pix"></i>
+                    &nbsp;Copiar chave pix
+                </button>
             </div>
+            <ul class="collection">
+                <li id="insta" class="collection-item">
+                    <img class="media-logo" src="https://cdn-icons-png.freepik.com/256/15713/15713420.png?semt=ais_hybrid" alt="Logo do Instagram">
+                    <div>
+                        <p>Nos siga também no Instagram!</p>
+                        <p>Acompanhe nossas atividades</p>
+                    </div>
+                </li>
+                <li id="youtube" class="collection-item">
+                    <img class="media-logo" src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png" alt="Logo do Youtube">
+                    <div>
+                        <p>Inscreva-se no nosso canal no Youtube!</p>
+                    </div>
+                </li>
+                <li id="whatsapp" class="collection-item">
+                    <img class="media-logo" src="https://cdn-icons-png.flaticon.com/256/3536/3536445.png" alt="Logo do Whatsapp">
+                    <div>
+                        <p>Entre em contato através do nosso Whatsapp</p>
+                    </div>
+                </li>
+                <li id="facebook" class="collection-item">
+                    <img class="media-logo" src="https://cdn-icons-png.freepik.com/256/5968/5968764.png?semt=ais_hybrid" alt="">
+                    <div>
+                        <p>Veja nossas pulicações no Facebook</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="congregacoes">
+            <h1 class="title">Conheça nossas congregações</h1>
         </section>
     </main>
 

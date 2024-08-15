@@ -1,14 +1,29 @@
 #home {
     display: flex;
-    min-height: calc(100vh - 96px);
-    max-height: calc(110vh - 96px);
+    height: auto;
+    min-height: 400px;
+    max-height: calc(100vh - 96px);
+    align-items: start;
+    padding: 0 8%;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#home_mobile {
+    display: none;
+}
+
+#shape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #cta {
     display: flex;
     flex-direction: column;
     width: 35%;
-    gap: 28px;
+    gap: 10px;
 }
 
 #cta .title {
@@ -48,4 +63,31 @@
 #banner img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 50px;
+}
+
+@media screen and (max-width: 1090px) {
+    #home {
+    display: none;
+    }   
+    #home_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 8%;
+    }
+    #banner_mobile {
+        width: 100%;
+        border-radius: 20px;
+    }
+    #igreja_mobile {
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        height: 250px;
+    }
+    #cta_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
 }

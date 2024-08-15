@@ -8,6 +8,7 @@
 }
 
 body {
+    /* background-color: #F8F4F1; */
     background-color: #F8F4F1;
 }
 
@@ -23,7 +24,8 @@ section {
     justify-content: center;
     border-radius: 12px;
     padding: 10px 12px;
-    background-color: #ff0000;
+    background-color: blue;
+    color: white;
     font-weight: 600;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -32,4 +34,9 @@ section {
 
 .btn-default:hover {
     background-color: #ec5353;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
 }
