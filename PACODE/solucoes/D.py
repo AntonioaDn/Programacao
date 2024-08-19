@@ -2,9 +2,14 @@
 
 n = int(input(""))
 for i in range(n):
-    numero = int(input(""))
-    divisores = 0
-    for j in range(1, numero+1):
-        if numero%j == 0:
-            divisores += 1
-    print(divisores)
+    num = aux = int(input(""))
+    j = 1
+    div = 0
+    while j <= aux:
+        if num % j == 0:
+            div += 2
+            if num/j == j:
+                div -= 1
+            aux = (num/j) - 1
+        j += 1
+    print(div)

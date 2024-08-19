@@ -1,13 +1,12 @@
 # Programa para verificar se dois numeros binarios fornecem um checksum valido
 # Um checksum valido é aquele que resulta em 11111111
 
-x1, x2 = map(int, input("").split())
+x1, x2 = input("").split()
 
-# Calcula o checksum
-checksum = x1 + x2
+x1 = int(x1, 2)
+x2 = int(x2, 2)
 
-# Verifica se o checksum é válido
-if checksum == 11111111:
-    print("SIM")
+if x1 + x2 == 255:
+    print('SIM')
 else:
-    print("NAO")
+    print('NAO')
