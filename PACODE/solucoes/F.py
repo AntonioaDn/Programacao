@@ -1,16 +1,14 @@
 n = int(input(""))
-m = []
-for i in range(n):
-    linha = list(map(int, input("").split()))
-    m.append(linha)
+clientes = [list(map(int, input("").split())) for _ in range(n)]
 
-clientes_nao_atendidos = 0
-hora_atual = m[0][0]
+hora_atual = clientes[0][0]
+clientes_n_atendidos = 0
+
 for i in range(n):
-    if hora_atual+m[i][1] > m[i][2]:
-        clientes_nao_atendidos += 1
+    tempo_chegada, tempo_atendimento, tempo_espera = clientes[i]
+    if hora_atual > tempo_chegada + tempo_espera:
+        clientes_n_atendidos += 1
         continue
-    hora_atual += m[i][1] 
+    hora_atual = max(hora_atual, tempo_chegada) + tempo_atendimento
 
-print(clientes_nao_atendidos)
-    
+print(clientes_n_atendidos)
