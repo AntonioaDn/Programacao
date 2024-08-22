@@ -14,5 +14,4 @@ int main () {
     }
     cout << "Vogais: " << vogais << endl;
     cout << "Consoantes: " << consoantes << endl;
-
 }
