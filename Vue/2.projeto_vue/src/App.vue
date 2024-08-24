@@ -2,16 +2,14 @@
 	<div>
 		<!-- <PrimeiroComponente/> -->
 		<!-- <p>O valor de testando é {{ testando }}</p> -->
-		<LifeCycle/>
 		<!-- <Pessoa/> -->
-		<Form/>
+		<Header/>	
 		<Info/>
-		<Picture/>
 	</div>
 </template>
 
 <script>
-	import Picture from './components/Picture.vue'
+	import Header from './components/Header.vue'
 	import Form from './components/Form.vue'
 	import PrimeiroComponente from './components/PrimeiroComponente.vue'
 	import LifeCycle from './components/LifeCycle.vue'
@@ -26,7 +24,7 @@
 			Pessoa,
 			Form,
 			Info,
-			Picture
+			Header
 		},
 		data() {
 			return {
@@ -35,3 +33,10 @@
 		}
 	}
 </script>
+
+<style>
+	body {
+		background-color: #333;
+		color: #FFF;
+	}
+</style>
