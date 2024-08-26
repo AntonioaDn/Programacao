@@ -15,10 +15,13 @@
                 {{ tecnologia.l }}
             </li>
         </ul>
+        <Picture/>
     </div>
 </template>
 
 <script>
+import Picture from './Picture.vue'
+
 export default {
     name: 'Info',
     data() {
@@ -31,6 +34,9 @@ export default {
                 {id: 3, l:'Vue'}
             ]
         }
+    },
+    components: {
+        Picture
     },
     props: {
         email: String
