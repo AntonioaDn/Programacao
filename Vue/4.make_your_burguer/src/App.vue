@@ -1,7 +1,7 @@
 <template>
-  <NavBar :logo="logo_src" :alt="app_name"/>
+  <NavBar :logo="logo_src" :alt="app_name" />
   <router-view/>
-  <Footer/>
+  <Footer />
 </template>
 
 <script>
@@ -24,4 +24,20 @@ export default {
 </script>
 
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .main-container {
+    margin: 50px;
+    min-height: 250px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #222;
+  }
 </style>
