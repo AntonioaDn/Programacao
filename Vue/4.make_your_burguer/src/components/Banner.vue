@@ -1,6 +1,6 @@
 <template>
     <div id="main-banner">
-        <h1>Make Your Burguer</h1>
+        <h1>Make Your Burger</h1>
     </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
         background-color: #222;
         padding: 20px 40px;
         text-align: center;
-        
+
         text-shadow: 0 0 10px black  ;
     }
 </style>
