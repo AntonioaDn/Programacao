@@ -78,15 +78,5 @@
     }
   ],
   "burgers": [
-    {
-      "id": "475b",
-      "nome": "Antônio",
-      "pao": "3 Queijos",
-      "carne": "Maminha",
-      "opcionais": [
-        "Bacon"
-      ],
-      "status": "Solicitado"
-    }
   ]
 }
