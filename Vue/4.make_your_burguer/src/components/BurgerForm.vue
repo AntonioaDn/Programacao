@@ -51,7 +51,7 @@ export default {
             nome: null,
             carne: null,
             pao: null,
-            status: 'Solicitado',
+            status: null,
             opcionais: [],
             msg: null
         }
@@ -68,7 +68,33 @@ export default {
         async CreateBurger(e) {
             e.preventDefault()
 
-            console.log("enviou")
+            const data = {
+                nome: this.nome,
+                pao: this.pao,
+                carne: this.carne,
+                opcionais: Array.from(this.opcionais),
+                status: 'Solicitado'
+            }
+
+            const datajson = JSON.stringify(data)
+
+            const req = await fetch("http://localhost:3000/burgers", {
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: datajson
+            })
+
+            const res = req.json()
+
+            console.log(res)
+
+            this.msg = "Pedido solicitado com sucesso!"
+
+            this.nome = ""
+            this.pao = ""
+            this.carne = ""
+            this.opcionais = []
+
         }
     },
     mounted() {
