@@ -64,9 +64,12 @@ export default {
             const req = await fetch("http://localhost:3000/ingredientes")
             const data = await req.json()
 
+            console.log(data)
+            
             this.paes = data.paes
             this.carnes = data.carnes
             this.opcionaisdata = data.opcionais
+
         },
         async CreateBurger(e) {
             e.preventDefault()

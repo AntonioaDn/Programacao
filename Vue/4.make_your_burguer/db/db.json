@@ -78,5 +78,29 @@
     }
   ],
   "burgers": [
+    {
+      "id": "262b",
+      "nome": "Antônio",
+      "pao": "Parmesão e Orégano",
+      "carne": "Alcatra",
+      "opcionais": [
+        "Bacon",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "numPedido": 1
+    },
+    {
+      "id": "cbde",
+      "nome": "Antônio",
+      "pao": "Italiano Branco",
+      "carne": "Maminha",
+      "opcionais": [
+        "Bacon",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "numPedido": 1
+    }
   ]
 }
