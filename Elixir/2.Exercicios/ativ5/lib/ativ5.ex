@@ -1,6 +1,6 @@
 defmodule Ativ5 do
   @doc """
-  Divide a string str em palavras. Uma palavra é considerada
+  Divide a string frase em palavras. Uma palavra é considerada
   uma sequência de caracteres que não contém caracteres de
   espaço (espaço, tabulação, nova linha). Em uma frase com
   pontuação, essa divisão em palavras vai incluir a pontuação
@@ -10,8 +10,7 @@ defmodule Ativ5 do
   iex> Ativ5.palavras("A morsa subiu no coqueiro, e o coqueiro tremeu.")
   ["A", "morsa", "subiu", "no", "coqueiro,", "e", "o", "coqueiro", "tremeu."]
   """
-  def palavras(str), do: String.split(str, ~r{\s}, trim: true)
-  # ~r{} é a sintaxe para expressões regulares em Elixir
+  def palavras(frase), do: String.split(frase, ~r{\s}, trim: true)
 
   @doc """
   Remove o último caractere de uma string.
@@ -20,10 +19,14 @@ defmodule Ativ5 do
   iex> Ativ5.remove_ultimo("multi-modalidades.")
   "multi-modalidades"
   """
-  def remove_ultimo(str), do: nil
+  def remove_ultimo(""), do: ""
+  def remove_ultimo(frase) do
+    comprimento = String.length(frase)
+    String.slice(frase, 0, comprimento - 1)
+  end
 
-  @defaults [ignora_cx_alta: true, pontuacao: [".", ",", "!", "?"]]
-  
+  @padroes [ignora_cx_alta: true, pontuacao: [".", ",", "!", "?"]]
+
   @doc """
   Calcula a frequência de ocorrência de palavras no texto, retornando
   um mapa em que cada chave é uma palavra do texto e o valor associado
@@ -39,10 +42,22 @@ defmodule Ativ5 do
   de pontuação que são ignorados no final das palavras. Por exemplo,
   se a lista de pontuação inclui a string ".", as strings "tremeu"
   e "tremeu." (com um ponto final na última posição) são consideradas
-  a mesma palavra. O padrão deve ser [".", ",", "!", "?"]. 
+  a mesma palavra. O padrão deve ser [".", ",", "!", "?"].
   """
   def freq_palavras(texto, opcoes \\ []) do
-    nil
+    opcoes = Keyword.merge(@padroes, opcoes)
+    palavras = palavras(texto)
+    palavras = if opcoes[:ignora_cx_alta], do: aplicar_map(palavras, &String.downcase/1), else: palavras
+    palavras = aplicar_map(palavras, &remove_pontuacao_final(&1, opcoes[:pontuacao]))
+    aplicar_fold_left(palavras, %{}, fn frequencia, palavra -> Map.update(frequencia, palavra, 1, &(&1 + 1)) end)
+  end
+
+  defp remove_pontuacao_final(palavra, pontuacao) do
+    if String.ends_with?(palavra, pontuacao) do
+      remove_ultimo(palavra)
+    else
+      palavra
+    end
   end
 
   @doc """
@@ -56,28 +71,26 @@ defmodule Ativ5 do
   [{"o", 4}, {"gato", 2}, {"pulou", 1}, {"muro", 1}, {"e", 1}, {"rato", 1}, {"seguiu", 1}]
   """
   def palavras_mais_frequentes(texto, opcoes \\ []) do
-    nil
+    frequencias = freq_palavras(texto, opcoes)
+    frequencias
+    |> Enum.to_list()
+    |> Enum.sort_by(fn {_palavra, contagem} -> -contagem end)
   end
 
-  # Calcular a lista de palavras mais frequentes pode resultar em uma lista
-  # grande se o texto original for grande. É possível limitar a lista apenas
-  # às N palavras mais frequentes usando Enum.take:
-  #
-  # Ativ5.palavras_mais_frequentes(texto) |> Enum.take(10)
-  #
-  # No exemplo acima, a lista resultante terá as 10 palavras mais frequentes.
-  #
+  # Função aplicar_map
+  def aplicar_map([], _funcao), do: []
+  def aplicar_map([cabeca | cauda], funcao), do: [funcao.(cabeca) | aplicar_map(cauda, funcao)]
 
-  # A função le_arquivo a seguir pode ser usada para testar o cálculo
-  # de frequência de palavras em textos mais longos que estão em
-  # arquivos de texto.
-  
+  # Função aplicar_fold_left
+  def aplicar_fold_left([], inicial, _funcao), do: inicial
+  def aplicar_fold_left([cabeca | cauda], inicial, funcao), do: aplicar_fold_left(cauda, funcao.(inicial, cabeca), funcao)
+
   @doc """
   Lê o conteúdo de um arquivo texto e retorna como string. Vai causar um erro
-  no programa caso não consiga ler o arquivo por qualquer motivo. 
+  no programa caso não consiga ler o arquivo por qualquer motivo.
   """
-  def le_arquivo(nome) do
-    { :ok, texto } = File.read(nome)
+  def le_arquivo(nome_arquivo) do
+    { :ok, texto } = File.read(nome_arquivo)
     texto
   end
 end

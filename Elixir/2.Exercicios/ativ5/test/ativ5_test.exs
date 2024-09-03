@@ -105,10 +105,10 @@ defmodule Ativ5Test do
     esperado = MapSet.new([{"de", 16}, {"que", 13}, {"o", 11}, {"a", 10}, 
                            {"um", 10}, {"cubas", 9}, {"e", 7}, {"do", 6}, 
                            {"família", 5}, {"é", 5}, {"na", 4}, {"meu", 4},
-                           {"mas", 4}, {"minha", 4}, {"pai", 4}])
+                           {"mas", 4}, {"minha", 4}, {"pai", 4}, {"era", 4}, {"da", 4}])
 
     testado = Ativ5.palavras_mais_frequentes(@texto)
-              |> Enum.take(15)
+              |> Enum.take_while(fn {_p, n } -> n >= 4 end)
               |> MapSet.new
 
     assert testado == esperado      
