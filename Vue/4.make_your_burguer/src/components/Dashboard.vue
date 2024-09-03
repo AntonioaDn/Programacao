@@ -23,7 +23,9 @@
                 </div>
                 <div>
                     <select name="status" class="status">
-                        <option value="">Selecione</option>
+                        <option :value="s.tipo" v-for="(s, index) in status" :key="index" :selected="burger.status == s.tipo">
+                            {{ s.tipo }}
+                        </option>
                     </select>
                     <button class="delete-btn">Cancelar</button>
                 </div>
@@ -37,7 +39,8 @@ export default {
     name: 'Dasboard',
     data() {
         return {
-            burgers: []
+            burgers: [],
+            status: []
         }
     },
     methods: {
@@ -45,11 +48,19 @@ export default {
             const req = await fetch("http://localhost:3000/burgers")
             const data = await req.json()
 
-            console.log(data)
-
             this.burgers = data
 
-            console.log(this.burgers)
+            this.getStatus()
+
+        },
+        async getStatus() {
+            const req = await fetch("http://localhost:3000/status")
+
+            const data = await req.json()
+
+            console.log(data)
+
+            this.status = data
         }
     },
     mounted() {
