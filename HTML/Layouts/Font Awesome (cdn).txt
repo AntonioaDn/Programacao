@@ -1,0 +1,6 @@
+Font Awesome (cdn)
+Google fonts poppins
+imagem de fundo: https://coolors.co/e1d8ca-c0a898-e0c8be-c8bbae-e4d2c8
+jquery cdn
+https://encycolorpedia.pt/ff0000
+https://www.softr.io/tools/svg-wave-generator
