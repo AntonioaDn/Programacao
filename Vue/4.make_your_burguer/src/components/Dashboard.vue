@@ -21,13 +21,13 @@
                         <li v-for="(opcional, index) in burger.opcionais" :key="index">{{ opcional }}</li>
                     </ul>
                 </div>
-                <div>
+                <div class="status-div">
                     <select name="status" class="status">
                         <option :value="s.tipo" v-for="(s, index) in status" :key="index" :selected="burger.status == s.tipo">
                             {{ s.tipo }}
                         </option>
                     </select>
-                    <button class="delete-btn">Cancelar</button>
+                    <button class="delete-btn" @click="deleteBurger(burger.id)">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -58,9 +58,15 @@ export default {
 
             const data = await req.json()
 
-            console.log(data)
-
             this.status = data
+        },
+        async deleteBurger(id) {
+            const req = await fetch(`http://localhost:3000/burgers/${id}`,
+                {
+                    method: "DELETE"
+                }
+            )
+            this.getPedidos()
         }
     },
     mounted() {
@@ -120,4 +126,9 @@ export default {
         background-color: transparent;
         color: #222;
     }
+    .status-div {
+        display: flex;
+        height: fit-content;
+    }
+    
 </style>
