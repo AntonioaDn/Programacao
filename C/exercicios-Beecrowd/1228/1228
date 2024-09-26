@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    while (scanf("%d", &N) != EOF) {
+        int grid_largada[N];
+        int grid_chegada[N];
+        int posicoes[N];
+        int chegada_mapeada[N];
+
+        // Leitura do grid de largada
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &grid_largada[i]);
+            // Preenhce o vetor de posições da seguinte forma:
+            // Se o vetor de largada for:
+            // 3 2 1 5 4 
+            // O vetor de posições será:
+            // 2 1 0 4 3
+            posicoes[grid_largada[i] - 1] = i;
+        }
+
+        // Leitura do grid de chegada
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &grid_chegada[i]);
+            // Preenhce o vetor de chegada mapeada da seguinte forma:
+            // Se o vetor de chegada for:
+            // 3 1 2 5 4
+            // O vetor de chegada mapeada será:
+            // 2 0 1 4 3
+            chegada_mapeada[i] = posicoes[grid_chegada[i] - 1];
+        }
+
+        // Contagem de inversões
+        int inversions = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j = i + 1; j < N; j++) {
+                // Se a posição mapeada de i for maior que a posição mapeada de j
+                // então houve uma ultrapassagem
+                if (chegada_mapeada[i] > chegada_mapeada[j]) {
+                    inversions++;
+                }
+            }
+        }
+
+        // Imprime o número mínimo de ultrapassagens
+        printf("%d\n", inversions);
+    }
+
+    return 0;
+}
