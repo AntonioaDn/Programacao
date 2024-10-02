@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 10px;
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #9bafd9, #103783)
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            height: 300px;
+            gap: 20px;
+        }
+        .caixa {
+            flex: 1 1;
+            display: flex;
+            flex-flow: column nowrap;
+            border: 1px solid rgba(255, 255, 255, 1);
+            padding: 10px 30px;
+            border-radius: 10px;
+            justify-content: space-evenly;
+            text-align: center;
+        }
+        .caixa button{
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 1);
+            padding: 10px;
+            font-size: 1.5rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="caixa" id="c1">
+            <h2>Example 1</h2>
+            <button onclick="alert('I love javascript')">Enter</button>            
+        </div>
+        <div class="caixa" id="c2">
+            <h2>Example 1</h2>
+            <button>Enter</button>            
+        </div>
+        <div class="caixa" id="c3">
+            <h2>Example 1</h2>
+            <button>Enter</button>            
+        </div>
+    </div>
+    <script>
+        // element.addEventListener("click", function)
+        
+        const buttonTwo = document.querySelector("#c2")
+
+        function alertBtn() {
+            alert('I also love Javascript')
+        }
+
+        buttonTwo.addEventListener("click", alertBtn)
+
+        const newBackgroundColor = document.querySelector("#c3")
+
+        function changeBgColor() {
+            if (newBackgroundColor.style.backgroundColor != 'blue'){
+                newBackgroundColor.style.backgroundColor = 'blue'
+            } else {
+                newBackgroundColor.style.backgroundColor = 'transparent'
+            }
+        }
+
+        newBackgroundColor.addEventListener("mouseover", changeBgColor)
+    </script>
+</body>
+</html>

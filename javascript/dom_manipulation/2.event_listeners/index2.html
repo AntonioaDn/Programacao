@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal Text</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            flex-direction: column;
+            margin: 10px;
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #9bafd9, #103783)
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            height: 300px;
+            gap: 20px;
+        }
+        .caixa {
+            flex: 1 1;
+            display: flex;
+            flex-flow: column nowrap;
+            border: 1px solid rgba(255, 255, 255, 1);
+            padding: 10px 30px;
+            border-radius: 10px;
+            justify-content: space-evenly;
+            text-align: center;
+        }
+        .caixa button{
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 1);
+            padding: 10px;
+            font-size: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        .hidden-content.reveal-btn {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Listeners</h1>
+    <div class="container">
+        <button class="reveal-btn boxes">Reveal More</button>
+
+        <div class="hidden-content boxes">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam amet delectus dolorem consequuntur vero explicabo quod veniam culpa laborum optio maxime, debitis pariatur quae et incidunt officiis quis voluptatum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam amet delectus dolorem consequuntur vero explicabo quod veniam culpa laborum optio maxime, debitis pariatur quae et incidunt officiis quis voluptatum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam amet delectus dolorem consequuntur vero explicabo quod veniam culpa laborum optio maxime, debitis pariatur quae et incidunt officiis quis voluptatum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam amet delectus dolorem consequuntur vero explicabo quod veniam culpa laborum optio maxime, debitis pariatur quae et incidunt officiis quis voluptatum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam amet delectus dolorem consequuntur vero explicabo quod veniam culpa laborum optio maxime, debitis pariatur quae et incidunt officiis quis voluptatum!
+        </div>
+    </div>
+    <script>
+        const revealBtn = document.querySelector(".reveal-btn")
+
+        const hiddenContent = document.querySelector(".hidden-content")
+
+        function revealContent() {
+            if (hiddenContent.classList.contains('reveal-btn')) {
+                hiddenContent.classList.remove('reveal-btn')
+                revealBtn.innerHTML = "Mostrar mais"
+            } else {
+                hiddenContent.classList.add('reveal-btn')
+                revealBtn.innerHTML = "Mostrar menos"
+            }
+        }
+
+        revealBtn.addEventListener("click", revealContent)
+    </script>
+</body>
+</html>

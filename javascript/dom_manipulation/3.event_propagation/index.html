@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            border: 10px solid white;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #9bafd9, #103783)
+        }
+        .div2, .div1 {
+            padding: 30px;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: space-around;
+            border: 3px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="div2">
+        2
+        <div class="div1">
+            1
+            <button>click</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("click", function() {
+            console.log("Window")
+        }, true)
+        document.addEventListener("click", function() {
+            console.log("Window")
+        }, true)
+        document.querySelector(".div2").addEventListener("click", function() {
+            console.log("div 2")
+        }, true)
+        document.querySelector(".div1").addEventListener("click", function() {
+            console.log("div 1")
+        }, true)
+        document.querySelector("button").addEventListener("click", function(e) {
+            console.log(e)
+        }, true)
+
+    </script>
+</body>
+</html>
