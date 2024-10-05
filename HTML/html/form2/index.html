@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: black;
+            display: flex;
+            min-height: 100vh;
+            min-width: 100vw;
+            align-items: start;
+            color: white;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            position: sticky;
+        }
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            font-size: 30px;
+            color: white;
+            position: relative;
+        }
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        nav ul li {
+            display: flex;
+            flex-grow: 1;
+        }
+        nav ul a::before {
+            content: '';
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            height: 3px;
+            width: 0%;
+            transition: .3s;
+            z-index: 1;
+        }
+        nav ul a:hover::before {
+            width: 100%;
+        }
+        nav button {
+            display: none;
+        }
+        main {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            height: calc(100vh - 50px);
+            justify-content: center;
+        }
+        main form {
+            padding-block: 30px;
+            width: 800px;
+            background-color: gray;
+            border-radius: 10px;
+        }
+        @media (max-width:750px) {
+            nav ul {
+                display: none;
+            }
+            .menu-mobile {
+                height: 40px;
+                width: 40px;
+                display: block;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                background-color: transparent;
+                filter: invert(0.5);
+                cursor: pointer;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">LOGO</a>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+            <button class="menu-mobile"><img class="menu-mobile" src="https://www.svgrepo.com/show/510067/menu.svg" alt=""></button>
+        </nav>
+    </header>
+    <main>
+        <form>
+            <h2>Formulário de inscrição</h2>
+            <label for="nome">
+                Nome:
+                <input type="text" id="nome" required placeholder="Digite seu nome aqui">
+            </label>
+        </form>
+    </main>
+</body>
+</html>

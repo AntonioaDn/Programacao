@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Formulario.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Logo</a>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h1 id="titulo">Cadastro para devs</h1>
+            <p id="subtitulo">Complete suas informações</p>
+            <br>
+        </div>
+        <form>
+
+            <fieldset class="grupo">
+                <div id="Nome">
+                    <div class="cnome">
+                        <label for="nome"><strong>Nome:</strong></label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="cnome">
+                        <label for="sobrenome"><strong>Sobrenome:</strong></label>
+                        <input type="text" id="sobrenome" required>
+                    </div>
+                    <div class="cnome">
+                        <label for="email"><strong>Email:</strong></label>
+                        <input type="email" required>
+                    </div>
+            </fieldset>
+                
+            </div>
+            
+            <div>
+                <label><strong>De qual lado da aplicação você desenvolve</strong></label>    
+                <label>
+                    <input type="radio" name="stack" value="front" checked>Front-end
+                </label>
+                <label>
+                    <input type="radio" name="stack" value="back">Back-end
+                </label>
+                <label>
+                    <input type="radio" name="stack" value="full">Full-stack
+                </label>
+            </div>
+
+            <div>
+                <label for="senioridade"><strong>Senioridade</strong></label>
+                <select name="senioridade" id="senioridade">
+                    <option selected disabled value="">Escolher</option>
+                    <option value="estagiario">Estagiário</option>
+                    <option value="junior">Júnior</option>
+                    <option value="pleno">Pleno</option>
+                    <option value="senior">Sênior</option>
+                </select>
+            </div>
+
+            <fieldset class="grupo">
+                <div>
+                    <label for=""><strong>Selecione as tecnologias que utiliza:</strong></label><br><br>
+                    <input type="checkbox" id="html" value="html" name="html">
+                    <label for="html">HTML</label>
+                    <input type="checkbox" id="css" value="css" name="css">
+                    <label for="html">CSS</label>
+                    <input type="checkbox" id="javascript" value="javascript" name="javascript">
+                    <label for="html">Javascript</label>
+                    <input type="checkbox" id="react" value="react" name="react">
+                    <label for="react">React</label>
+                    <input type="checkbox" id="vue" value="vue" name="vue">
+                    <label for="react">Vue.js</label>
+                </div>
+            </fieldset>
+
+            <div>
+                <label for=""><strong>Conte um pouco sobre sua experiência</strong></label>
+                <textarea name="experiencia" id="experiencia" rows="6" style="width: 26em" wrap="soft"></textarea>
+            </div>
+
+            <button type="submit">Enviar!</button>
+
+        </form>
+    </main>
+</body>
+</html>
