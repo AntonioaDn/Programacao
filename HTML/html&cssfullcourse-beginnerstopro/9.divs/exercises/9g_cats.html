@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Div exercise</title>
+    <style>
+      .perfil {
+        display: inline-block;
+        margin-right: 20px;
+        width: 200px;
+        font-family: Arial;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.3)
+      }
+      .avatar {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 0;
+        object-fit: cover;
+      }
+      .name {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        margin-left: 8px;
+      }
+      .friends {
+        color: rgb(100, 100, 100);
+        margin-left: 8px;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      .add-friends {
+        margin-left: 8px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        background-color: rgb(24, 119, 242);
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    }
+    .add-friends:active {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="perfil">
+      <img class="avatar" src="cat.jpg" alt="">
+      <p class="name">Oliver</p>
+      <p class="friends">2 mutual friends</p>
+      <button class="add-friends">Add friend</button>
+    </div><div class="perfil">
+      <img class="avatar" src="cat2.jpg" alt="">
+      <p class="name">Oliver</p>
+      <p class="friends">2 mutual friends</p>
+      <button class="add-friends">Add friend</button>
+    </div><div class="perfil">
+      <img class="avatar" src="dog.jpg" alt="">
+      <p class="name">Oliver</p>
+      <p class="friends">2 mutual friends</p>
+      <button class="add-friends">Add friend</button>
+    </div>
+  </body>
+</html>
