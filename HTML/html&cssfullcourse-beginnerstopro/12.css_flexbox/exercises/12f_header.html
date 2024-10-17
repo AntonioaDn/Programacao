@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+  <title>Flexbox exercise</title>
+  <meta name="description" content="DESCRIPTION">
+
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .header {
+      display: flex;
+      flex-direction: row;
+      height: 40px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      background-color: rgb(120, 82, 178);
+    }
+    input {
+      border-radius: 30px;
+      border: none;
+      padding: 5px 0 5px 10px;
+      flex: 1;
+      max-width: 370px
+    }
+    p {
+      color: white;
+    }
+    button {
+      color: white;
+      background-color: rgb(120, 82, 178);
+      border: 1px white solid;
+      padding: 6px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.4);
+      transition: color .3s, background-color .3s;
+    }
+    button:hover {
+      color: rgb(120, 82, 178);
+      background-color: white;
+    }
+    button:active {
+      box-shadow: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="header">
+    <p>Home</p>
+    <input placeholder="Search" type="text">
+    <button>Download</button>
+  </div>
+</body>
+
+</html>
