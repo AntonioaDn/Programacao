@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nested layout exercise</title>
+    <style>
+      p{
+        font-family: Arial, Helvetica, sans-serif
+      }
+      .perfil {
+        margin-right: 20px;
+        width: 200px;
+        font-family: Arial;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.3)
+      }
+      .avatar {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 0;
+        object-fit: cover;
+      }
+      .name {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        margin-left: 8px;
+      }
+      .friends {
+        color: rgb(100, 100, 100);
+        margin-left: 8px;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      .add-friends {
+        margin-left: 8px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        background-color: rgb(24, 119, 242);
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+      }
+      .add-friends:active {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+      }
+      .icon {
+        margin-left: 8px;
+        margin-bottom: 5px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+      }
+      .friends-div {
+        vertical-align: middle;
+      }
+      .perfil-div {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin-right: 20px;
+      }
+      .grid {
+        display: grid;
+        margin-left: 10px;
+        grid-template-columns: 200px 200px 200px;
+        column-gap: 20px;
+      }
+      .grid-element {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
+      .grid-friends {
+        display: grid;
+        grid-template-columns: 35px 1fr;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid-element">
+        <img class="avatar" src="cat.jpg" alt="">
+        <div class="grid-texts">
+          <p class="name">Oliver</p>
+          <div class="grid-friends">
+            <img class="icon" src="dog2.jpg" alt="">
+            <p class="friends">2 mutual friends</p>
+          </div>
+          <button class="add-friends">Add Friend</button>
+        </div>
+      </div>
+
+      <div class="grid-element">
+        <img class="avatar" src="cat2.jpg" alt="">
+        <div class="grid-texts">
+          <p class="name">Mimi</p>
+          <div class="grid-friends">
+            <img class="icon" src="dog2.jpg" alt="">
+            <p class="friends">3 mutual friends</p>
+          </div>
+          <button class="add-friends">Add Friend</button>
+        </div>
+      </div>
+      
+      <div class="grid-element">
+        <img class="avatar" src="dog.jpg" alt="">
+        <div class="grid-texts">
+          <p class="name">Rex</p>
+          <div class="grid-friends">
+            <img src="dog2.jpg" alt="" class="icon">
+            <p class="friends">4 mutual friends</p>
+          </div>
+          <button class="add-friends">Add-friends</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="perfil-div" style="margin-top:30px;">
+      <div>
+        <img class="avatar" src="cat.jpg" alt="">
+      </div>
+      <div>
+        <div>
+          <p class="name">Oliver</p>
+        </div>
+        <div>
+          <div class="friends-div">
+            <img class="icon" src="dog2.jpg" alt="">
+          </div>
+          <div class="friends-div">
+            <p class="friends">2 mutual friends</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="add-friends">Add Friend</button>
+      </div>
+    </div>
+    <div class="perfil-div">
+      <div>
+        <img class="avatar" src="cat2.jpg" alt="">
+      </div>
+      <div>
+        <div>
+          <p class="name">Mimi</p>
+        </div>
+        <div>
+          <div class="friends-div">
+            <img class="icon" src="dog2.jpg" alt="">
+          </div>
+          <div class="friends-div">
+            <p class="friends">3 mutual friends</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="add-friends">Add Friend</button>
+      </div>
+    </div>
+    <div class="perfil-div">
+      <div>
+        <img class="avatar" src="dog.jpg" alt="">
+      </div>
+      <div>
+        <div>
+          <p class="name">Rex</p>
+        </div>
+        <div>
+          <div class="friends-div">
+            <img class="icon" src="dog2.jpg" alt="">
+          </div>
+          <div class="friends-div">
+            <p class="friends">4 mutual friends</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="add-friends">Add Friend</button>
+      </div>
+    </div> -->
+  </body>
+</html>
