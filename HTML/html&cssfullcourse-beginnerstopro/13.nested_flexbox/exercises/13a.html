@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+  <title>Nested flexbox exercise</title>
+  <meta name="description" content="DESCRIPTION">
+
+  <style>
+    .flex-f {
+      display: flex;
+
+    }
+    .flex-c1 {
+      display: flex;
+      background-color: lightblue;
+      width: 100px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+    .flex-c2 {
+      display: flex;
+      background-color: lightpink;
+      width: 200px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+    .flex-c3 {
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    <h1>Nested flexbox exercise</h1>
+
+
+    <div class="flex-f">
+      <div class="flex-c1">
+        <div class="flex-c3">item1</div>
+      </div>
+      <div class="flex-c2"></div>
+    </div>
+
+  </div>
+</body>
+
+</html>

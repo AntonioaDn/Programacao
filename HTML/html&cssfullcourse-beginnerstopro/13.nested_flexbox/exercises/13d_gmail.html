@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+  <title>Nested flexbox exercises</title>
+
+  <style>
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    .text {
+      color: rgb(87, 87, 87);
+      font-size: 14px;
+    }
+    .flex {
+      /* display: flex; */
+      margin-top: 50px;
+      margin-left: 50px;
+      width: 400px;
+      border-radius: 5px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+      padding-left: 15px;
+      padding-top: 7px;
+      padding-bottom: 30px
+
+    }
+    .flex-perfil {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .perfil {
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px
+    }
+    .content {
+
+    }
+    .title {
+      display: flex;
+      justify-content: space-between;
+    }
+    .message-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .message-time {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(99, 99, 99);
+    }
+    .message-content {
+      font-size: 17px;
+      font-weight: bold;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
+    .message {
+      color: rgb(99, 99, 99)
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="flex">
+    <div class="flex-h">
+      <p class="text">ALL INBOXES</p>
+    </div>
+    <div class="flex-perfil">
+      <img class="perfil" src="cat.jpg" alt="">
+      <div class="content">
+        <div class="title">
+          <p class="message-title">Chewy Promotions</p>
+          <span class="message-time">4:58 PM</span>
+        </div>
+        <div>
+          <p class="message-content">Biggest sales of the year!</p>
+        </div>
+        <div>
+          <p class="message">Hey there! We're writing to tell you about our...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

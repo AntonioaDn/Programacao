@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+  <title>Nested flexbox challenge</title>
+
+  <style>
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    .flex {
+      display: flex;
+      width: 500px;
+    }
+    .perfil-img {
+      height: 70px;
+      width: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .content-text {
+      margin-left: 10px;
+    }
+    .username-div {
+      display: flex;
+    }
+    .username {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .id {
+      margin-left: 5px;
+      font-size: 18px;
+      color: rgb(53, 53, 53);
+    }
+    .description {
+      font-size: 18px;
+      line-height: 20px;
+      margin-top: 5px;
+      margin-bottom: 7px;
+    }
+    .video-content {
+      display: flex;
+      border: 1px solid rgb(173, 173, 173);
+      border-radius: 12px;
+      padding-right: 0px;
+      overflow: hidden;
+      width: 350px;
+    }
+    .gray {
+      background-color: rgb(173, 173, 173);
+      width: 100px;
+      flex: 0 0 auto;
+    }
+    .video-text {
+      padding: 12px 0 5px 12px;
+    }
+    .video-link {
+      color: rgb(53, 53, 53);
+    }
+  </style>
+
+</head>
+
+<body style="padding: 50px 0 0 50px;">
+  <div class="flex">
+    <div>
+      <img class="perfil-img" src="cat.jpg" alt="">
+    </div>
+    <div class="content-text">
+      <div class="username-div">
+        <p class="username">supersimple.dev</p>
+        <p class="id">@SuperSimpleDev</p>
+      </div>
+      <div>
+        <p class="description">What is backend web development? A complete overview. New video is up!</p>
+      </div>
+      <div class="video-content">
+        <div class="gray">
+        </div>
+        <div class="video-text">
+          <div>
+            <p class="video-link">youtube.com</p>
+          </div>
+          <div>
+            <p>Backend web development - a complete overview (2021)</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
