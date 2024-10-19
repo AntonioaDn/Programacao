@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+  <title>Position exercises</title>
+  <meta name="description" content="DESCRIPTION">
+
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+      position: relative;
+      width: 300px;
+    }
+    .discount {
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      background-color: white;
+      color: black;
+      padding: 3px 7px;
+    }
+    .img-shirt {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+    .div-cart {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      display: flex;
+      height: 30%;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    .btn-add-cart {
+      border: 1px solid black;
+      padding: 4px 8px;
+      background-color: white;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="discount">100% True</div>
+    <img class="img-shirt" src="jesus_saves_shirt.webp" alt="">
+    <div class="div-cart">
+      <button class="btn-add-cart">Add to Cart</button>
+    </div>
+  </div>
+</body>
+
+</html>
