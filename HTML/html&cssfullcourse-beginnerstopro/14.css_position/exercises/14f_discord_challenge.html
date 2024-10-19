@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+  <title>Position exercises</title>
+  <meta name="description" content="DESCRIPTION">
+
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .side-bar1 {
+      background-color: #23272A;
+      padding: 10px 12px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+    .img-icon {
+      margin-top: 10px;
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+    .side-bar2 {
+      background-color: #2C2F33 ;
+      position: fixed;
+      width: 100px;
+      top: 0;
+      bottom: 0;
+      left: 74px;
+      padding: 15px 16px;
+    }
+    .div-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .p-info {
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .more {
+      color: #99AAB5;
+    }
+    .p-msgs {
+      color: #99AAB5;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="side-bar1">
+    <img class="img-icon" src="cat.jpg" alt="">
+    <img class="img-icon" src="cat2.jpg" alt="">
+    <img class="img-icon" src="dog.jpg" alt="">
+  </div>
+  <div class="side-bar2">
+    <div class="div-info">
+      <p class="p-info">INFO</p>
+      <p class="more">+</p>
+    </div>
+    <p class="p-msgs"># new-videos</p>
+    <p class="p-msgs"># updates</p>
+    <p class="p-msgs"># faq</p>
+  </div>
+</body>
+
+</html>
