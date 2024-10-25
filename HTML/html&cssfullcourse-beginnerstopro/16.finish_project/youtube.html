@@ -25,9 +25,11 @@
       .video-preview {
       }
       .channel-picture {
-        vertical-align: top;
+        align-self: flex-start;
+        height: auto;
       }
       .video-info {
+        position: relative;
       }
       .profile-picture {
         width: 36px;
@@ -112,9 +114,6 @@
         margin-left: -1px;
         margin-right: 8px;
         /* position: relative; */
-      }
-      .search-button .tooltip {
-        
       }
       
       .voice-search-button {
@@ -230,10 +229,10 @@
         position: absolute;
         background-color: gray;
         color: white;
-        padding: 4px 8px;
+        padding: 8px;
         border-radius: 2px;
         font-size: 12px;
-        bottom: -28px;
+        bottom: -40px;
         opacity: 0;
         transition: opacity .15s;
         pointer-events: none;
@@ -249,6 +248,40 @@
       a.video-title {
         text-decoration: none;
         color: black;
+      }
+      .channel-picture a {
+        position: relative;
+      }
+      .ttcp img {
+        width: 46px;
+      }
+      .ttcp {
+        position: absolute;
+        background-color: white;
+        white-space: nowrap;
+        padding: 10px;
+        display: flex;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        gap: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .25s;
+        z-index: 100;
+        top: 50px;
+      }
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+      .column .video-title {
+        color: black;
+        margin-bottom: 5px;
+        font-weight: 900;
+      }
+      .channel-picture:hover .ttcp {
+        opacity: 1;
+        transition: opacity .25s;
       }
     </style>
   </head>
@@ -341,11 +374,18 @@
             14:20
           </div>
         </div>
+
         <div class="video-info-grid">
           <div class="channel-picture">
             <a href="https://www.youtube.com/c/mkbhd">
               <img class="profile-picture" src="channel-pictures/channel-1.jpeg" alt="">
-
+              <div class="ttcp">
+                <img class="profile-picture" src="channel-pictures/channel-1.jpeg" alt="">
+                <div class="column">
+                  <p class="video-title">Marques Brownlee</p>
+                  <p class="video-stats">15M Subscribers</p>
+                </div>
+              </div>
             </a>
           </div>
           <div class="video-info">
@@ -354,6 +394,7 @@
             </p>
             <p class="video-author">Marques Brownlee</p>
             <p class="video-stats">3.4M views &#183; 6 months ago</p>
+            
           </div>
   
         </div>
@@ -363,19 +404,23 @@
         <div class="thumbnail-row">
           <a href="https://www.youtube.com/watch?v=mP0RAo9SKZk">
             <img class="thumbnail" src="thumbnails/thumbnail-2.webp">
-
           </a>
           <div class="video-time">
             8:22
           </div>
-
         </div>
         
         <div class="video-info-grid">
           <div class="channel-picture">
             <a href="https://www.youtube.com/c/markiplier">
               <img class="profile-picture" src="channel-pictures/channel-2.jpeg" alt="">
-
+              <div class="ttcp">
+                <img class="profile-picture" src="channel-pictures/channel-2.jpeg" alt="">
+                <div class="column">
+                  <p class="video-title">Markiplier</p>
+                  <p class="video-stats">37M Subscribers</p>
+                </div>
+              </div>
             </a>
           </div>
           <div class="video-info">
@@ -403,7 +448,13 @@
           <div class="channel-picture">
             <a href="https://www.youtube.com/user/SSSniperWolf">
               <img class="profile-picture" src="channel-pictures/channel-3.jpeg" alt="">
-
+              <div class="ttcp">
+                <img class="profile-picture" src="channel-pictures/channel-3.jpeg" alt="">
+                <div class="column">
+                  <p class="video-title">SSSniperWolf</p>
+                  <p class="video-stats">34.7M Subscribers</p>
+                </div>
+              </div>
             </a>
           </div>
           <div class="video-info">
@@ -432,7 +483,13 @@
           <div class="channel-picture">
             <a href="https://www.youtube.com/c/veritasium">
               <img class="profile-picture" src="channel-pictures/channel-4.jpeg" alt="">
-
+              <div class="ttcp">
+                <img class="profile-picture" src="channel-pictures/channel-4.jpeg" alt="">
+                <div class="column">
+                  <p class="video-title">Veritasium</p>
+                  <p class="video-stats">16.5M Subscribers</p>
+                </div>
+              </div>
             </a>
           </div>
           <div class="video-info">
@@ -458,9 +515,15 @@
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
-            <a href="https://www.youtube.com/c/veritasium">
+            <a href="https://www.youtube.com/c/CSDojo">
               <img class="profile-picture" src="channel-pictures/channel-5.jpeg" alt="">
-
+              <div class="ttcp">
+                <img class="profile-picture" src="channel-pictures/channel-5.jpeg" alt="">
+                <div class="column">
+                  <p class="video-title">CSDojo</p>
+                  <p class="video-stats">1.9M Subscribers</p>
+                </div>
+              </div>
             </a>
           </div>
           <div class="video-info">
@@ -487,9 +550,15 @@
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
-            <a href="https://www.youtube.com/c/veritasium">
+            <a href="https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA">
               <img class="profile-picture" src="channel-pictures/channel-6.jpeg" alt="">
-
+              <div class="ttcp">
+                <img class="profile-picture" src="channel-pictures/channel-6.jpeg" alt="">
+                <div class="column">
+                  <p class="video-title">MrBeast</p>
+                  <p class="video-stats">323M Subscribers</p>
+                </div>
+              </div>
             </a>
           </div>
           <div class="video-info">
