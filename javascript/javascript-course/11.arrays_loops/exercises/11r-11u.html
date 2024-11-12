@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>11r-11u</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+  
+
+    <script>
+      // Answer for 11r
+      // function removeEgg(foods) {
+      //   const result = [];
+
+      //   for (let i = 0; i < foods.length; i++) {
+      //     if (foods[i] !== 'egg') {
+      //       result.push(foods[i]);
+      //     } else {
+      //       continue;
+      //     }
+      //   }
+
+      //   return result;
+      // }
+
+      // Answer for 11s
+      // function removeEgg(foods) {
+      //   const result = [];
+      //   let removed = 0;
+
+      //   for (let i = 0; i < foods.length; i++) {
+      //     if (foods[i] === 'egg' && removed < 2) {
+      //       removed++;
+      //       continue
+      //     }
+      //     result.push(foods[i]);
+      //   }
+
+      //   return result;
+      // }
+
+      // Answer for 11t
+      // function removeEgg(foods) {
+      //   foods = foods.reverse();
+      //   const result = [];
+      //   let removed = 0;
+
+      //   for (let i = 0; i < foods.length; i++) {
+      //     if (foods[i] === 'egg' && removed < 2) {
+      //       removed++;
+      //       continue;
+      //     }
+      //     result.push(foods[i]);
+      //   }
+
+      //   return result.reverse();
+      // }
+
+      // Answer for 11u
+      function removeEgg(foods) {
+        let foodsCopy = foods.slice();
+        foodsCopy = foodsCopy.reverse();
+        const result = [];
+        let removed = 0;
+
+        for (let i = 0; i < foodsCopy.length; i++) {
+          if (foodsCopy[i] === 'egg' && removed < 2) {
+            removed++;
+            continue;
+          }
+          result.push(foodsCopy[i]);
+        }
+
+        return result.reverse();
+      }
+
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+
+      console.log(removeEgg(foods));
+      console.log(foods)
+
+    </script>
+  </body>
+
+</html>

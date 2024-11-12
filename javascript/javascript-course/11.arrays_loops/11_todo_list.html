@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>Todo List</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <p>Todo List</p>
+    <input class="input-todo" type="text" placeholder="Todo name"
+    onkeydown="
+      if (event.key === 'Enter') {
+        addToDo();
+      }
+    ">
+
+    <button onclick="
+      addToDo();
+    ">Add</button>
+    
+    <div class="div-todos">
+
+    </div>
+
+    <script>
+      const todoList = [];
+      const inputElement = document.querySelector('.input-todo');
+      const div = document.querySelector('.div-todos');
+      
+      function addToDo() {
+        let htmlAcc = ``;
+        const todo = inputElement.value;
+        todoList.push(todo);
+        inputElement.value = '';
+
+        for (let i = 0; i < todoList.length; i++) {
+          htmlAcc += `<p>${todoList[i]}</p>`;
+        }
+
+        div.innerHTML = htmlAcc;
+        console.log(todoList);
+      }
+    </script>
+  </body>
+
+</html>

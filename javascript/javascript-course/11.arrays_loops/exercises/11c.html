@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>11b</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+    <script>
+      function arraySwap(array) {
+        if (array) {
+          const aux = array[0];
+          array[0] = array[array.length - 1];
+          array[array.length - 1] = aux;
+          return array;
+        }
+      }
+
+      console.log(arraySwap([10, 20, 30, 40]));
+    </script>
+  </body>
+
+</html>

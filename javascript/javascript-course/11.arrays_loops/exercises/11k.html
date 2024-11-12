@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>11k</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+  
+
+    <script>
+
+      function countPositive(nums) {
+        if (nums) {
+          let acc = 0;
+          for (let i = 0; i < nums.length; i++) {
+            if (nums[i] >= 0) {
+              acc++;
+            }
+          }
+          return acc;
+        }
+      }
+
+      console.log(countPositive([2, 1, -3]));
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>11n</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+  
+
+    <script>
+      function countWords(words) {
+        const obj = {};
+
+        for (let i = 0; i < words.length; i++) {
+          if (obj[words[i]] != undefined) {
+            obj[words[i]] += 1;
+          } else {
+            obj[words[i]] = 1;
+          }
+        }
+
+        return obj;
+      }
+
+      console.log(countWords(['Ola', 'Leonidas', 'Apolo', 'Qin Shin Huan', 'Apolo', 'Apolo', 'Qin Shin Huan']));
+    </script>
+  </body>
+
+</html>
