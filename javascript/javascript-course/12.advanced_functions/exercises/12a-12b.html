@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>12a-12b</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+  
+    <script>
+      let add = function () {
+        console.log(2 + 3);
+      }
+
+      add();
+      add();
+
+      function runTwice(run) {
+        run();
+        run();
+      }
+
+      runTwice(function() {
+        console.log('12b');
+      })
+
+      runTwice(add);
+
+    </script>
+  </body>
+
+</html>

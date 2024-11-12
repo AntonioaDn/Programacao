@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>12c-12d</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+    <button>Start</button>
+    
+    <script>
+      const btn = document.querySelector('button');
+      
+      btn.addEventListener('click', () => {
+        setTimeout(() => {
+          btn.innerHTML = 'Finished!';
+        }, 1000);
+        btn.innerHTML = 'Loading...';
+      });
+    </script>
+  </body>
+
+</html>

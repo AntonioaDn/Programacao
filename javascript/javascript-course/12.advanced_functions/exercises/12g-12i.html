@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>12g-12i</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+    <button class="js-add">Add</button>
+
+    <button class="js-remove">Remove</button>
+    
+    <script>
+      let msgs = 2;
+      setInterval(() => {
+        if (msgs !== 0) {
+          if (document.title !== 'App') {
+            document.title = 'App';
+          } else {
+            document.title = `(${msgs}) New messages`
+          }
+        } else {
+          if (document.title !== 'App') {
+            document.title = 'App';
+          }
+        }
+      }, 1000);
+
+      document.querySelector('.js-add')
+        .addEventListener('click', () => {
+          msgs++;
+        });
+
+      document.querySelector('.js-remove')
+        .addEventListener('click', () => {
+          if (msgs > 0) {
+            msgs--;
+          }
+        });
+    </script>
+  </body>
+
+</html>

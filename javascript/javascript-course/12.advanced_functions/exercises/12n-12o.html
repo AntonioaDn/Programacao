@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>12n-12o</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+    
+    <script>
+
+      // Answer for 12n
+      // function removeEgg(foods) {
+      //   return foods.filter( value => value !== 'egg');
+      // }
+
+      // console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));  
+      
+      // Answer for 12o
+      function removeEgg(foods) {
+        let removed = 0;
+        return foods.filter( (value) => {
+          if (value === 'egg' && removed < 2) {
+            removed++;
+            return false;
+          }
+          return true;
+        });
+      }
+
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));  
+    </script>
+  </body>
+
+</html>
