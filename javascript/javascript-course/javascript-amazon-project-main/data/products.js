@@ -656,5 +656,25 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/umbrella.jpg",
+    name: "Umbrella Large Size Color Green",
+    rating: {
+      stars: 5,
+      count: 128
+    },
+    priceCents: 1699
+  },
+  {
+    id: "id2",
+    image: "images/products/backpack.jpg",
+    name: "Basic Backpack Black",
+    rating: {
+      stars: 4,
+      count: 3000
+    },
+    priceCents: 13000
   }
 ];
