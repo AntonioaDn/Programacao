@@ -38,6 +38,8 @@ let cartSummaryHTML = '';
               </span>
               <span class="update-quantity-link link-primary js-update-quantity-link" data-product-id="${matchingProduct.id}">
                 Update
+                <input class="quantity-input">
+                <span class="save-quantity-link">Save</span>
               </span>
               <span class="delete-quantity-link link-primary js-quantity-link" data-product-id="${matchingProduct.id}">
                 Delete
