@@ -101,7 +101,7 @@ function updateCheckout() {
   let quantity = calculateCartQuantity();
 
   document.querySelector('.js-return-to-home-link')
-    .innerHTML = `${quantity} items`
+    .innerHTML = `${calculateCartQuantity()} items`
 
 }
   
@@ -126,6 +126,9 @@ document.querySelectorAll('.js-quantity-link')
 document.querySelectorAll('.js-update-quantity-link')
   .forEach( (link) => {
     link.addEventListener('click', () => {
-      console.log(link.dataset.productId);
+      const { productId } = link.dataset;
+      const cartItemContainer = document.querySelector(`.js-cart-item-container-${productId}`);
+      cartItemContainer.classList.add('is-editing-quantity');
+      
     })
   });
