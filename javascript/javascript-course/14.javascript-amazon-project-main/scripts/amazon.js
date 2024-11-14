@@ -1,4 +1,4 @@
-import { cart } from '../data/cart.js';
+import { cart, addToCart } from '../data/cart.js';
 import { products } from '../data/products.js';
 
 const productsGrid  = document.querySelector('.products-grid');
@@ -60,46 +60,37 @@ products.forEach( (product) => {
 
 productsGrid.innerHTML = productsHTML;
 
-let setTimeId;
+let setTimeIds = {};
+function updateCartQuantity(productId) {
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity;
+
+  document.querySelector(`.js-added-to-cart-${productId}`)
+    .classList.add('opaque');
+  
+  if (setTimeIds[productId]) {
+    clearTimeout(setTimeIds[productId]);
+  }
+  
+  setTimeIds[productId] = setTimeout(() => {
+    document.querySelector(`.js-added-to-cart-${productId}`)
+      .classList.remove('opaque');
+    delete setTimeIds[productId];
+  }, 2000);
+}
+
 document.querySelectorAll('.js-add-to-cart').forEach(
   (button) => {
     button.addEventListener('click', () => {
       const { productId } = button.dataset;
 
-      let matchingItem;
+      addToCart(productId);
 
-      cart.forEach( (item) => {
-        if (item.productId === productId) {
-          matchingItem = item;
-        }
-      });
-
-      let quantity = Number(document.querySelector(`.js-quantity-selector-${productId}`).value) || 1;
-
+      updateCartQuantity(productId);
       
-      
-      if (matchingItem) {
-        matchingItem.quantity += quantity;
-      } else {
-        cart.push({productId, quantity});
-      }
-
-      let cartQuantity = 0;
-      cart.forEach( (item) => {
-        cartQuantity += item.quantity;
-      });
-      document.querySelector('.js-cart-quantity')
-        .innerHTML = cartQuantity;
-
-      
-        
-      document.querySelector(`.js-added-to-cart-${productId}`)
-        .classList.add('opaque');
-      
-      clearTimeout(setTimeId);
-      setTimeId = setTimeout( () => {
-        document.querySelector(`.js-added-to-cart-${productId}`)
-          .classList.remove('opaque');
-      }, 2000);
     });
   });
