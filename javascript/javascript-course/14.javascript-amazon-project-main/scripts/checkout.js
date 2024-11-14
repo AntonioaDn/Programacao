@@ -94,6 +94,19 @@ let cartSummaryHTML = '';
     `
   });
 
+updateCheckout();
+function updateCheckout() {
+  let quantity = 0;
+
+  cart.forEach( (cartItem) => {
+    quantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-return-to-home-link')
+    .innerHTML = `${quantity} items`
+
+}
+  
 document.querySelector('.js-order-summary')
   .innerHTML = cartSummaryHTML;
   
@@ -101,11 +114,13 @@ document.querySelector('.js-order-summary')
 document.querySelectorAll('.js-quantity-link')
   .forEach( (link) => {
     link.addEventListener('click', () => {
-      const productId = link.dataset.productId;
+      const { productId } = link.dataset;
       removeFromCart(productId);
 
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`
       ).remove();
+
+      updateCheckout();
     });
   });
