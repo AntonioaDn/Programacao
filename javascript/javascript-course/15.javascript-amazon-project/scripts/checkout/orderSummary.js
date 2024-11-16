@@ -69,11 +69,11 @@ export function renderOrderSummary() {
     
     deliveryOptions.forEach( (deliveryOption) => {
       const dateString = calculateDeliveryDate(deliveryOption);
+      console.log(dateString);
       const priceString = deliveryOption.priceCents
       ? `$${formatCurrency(deliveryOption.priceCents)}` 
       : `FREE`;
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
-      // console.log(`${deliveryOption.id} is equal to ${cartItem.deliveryOptionId} ? ${deliveryOption.id === cartItem.deliveryOptionId}`)
       html += `
         <div class="delivery-option js-delivery-option"
         data-product-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOption.id}">
