@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>15b</title>
+    <meta name="description" content="DESCRIPTION">
+
+    <style>
+    
+    </style>
+
+  </head>
+
+  <body>
+  
+    <script type="module">
+      import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+      const today = dayjs();
+      const oneMonthAfterToday = today.add(1, 'month');
+      console.log(oneMonthAfterToday.format('MMMM, D'));
+    </script>
+  </body>
+
+</html>
