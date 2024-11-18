@@ -166,6 +166,8 @@ export function renderOrderSummary() {
         const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
         quantityLabel.innerHTML = newQuantity;
         renderCheckoutHeader();
+        console.log('Teste')
+        renderPaymentSummary();
         
       });
     });
