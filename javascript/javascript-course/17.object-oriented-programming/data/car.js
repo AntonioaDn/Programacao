@@ -1,19 +1,19 @@
 class Car {
-  brand;
-  model;
+  #brand;
+  #model;
   speed;
   isTrunkOpen;
 
   constructor(brand, model) {
-    this.brand = brand;
-    this.model = model;
+    this.#brand = brand;
+    this.#model = model;
     this.speed = 0;
     this.isTrunkOpen = false;
   }
 
   displayInfo() {
     console.log(
-      `${this.brand} ${this.model}, Speed: ${this.speed} km/h, 
+      `${this.#brand} ${this.#model}, Speed: ${this.speed} km/h, 
       Trunk: ${this.isTrunkOpen ? 'Open' : 'Closed'}`
     );
   }
@@ -74,10 +74,5 @@ class RaceCar extends Car {
 
 const car1 = new Car('Toyota', 'Corolla');
 const car2 = new Car('Tesla', 'Model 3');
-const car3 = new RaceCar('McLaren', 'F1', 20);
-car3.go();
-car3.go();
-car3.go();
-car3.go();
-
-car3.displayInfo();
+car1.displayInfo();
+car2.displayInfo();
