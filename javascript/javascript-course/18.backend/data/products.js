@@ -105,17 +105,12 @@ export function loadProductsFetch() {
       }
       return new Product(productDetails);
     });
-
-    console.log('load products')
+    console.log('load products');
   });
 
   return promise;
 }
-loadProductsFetch().then(() => {
-  console.log('next step');
-});
 
-/*
 export function loadProducts(fun) {
   const xhr = new XMLHttpRequest();
 
@@ -127,7 +122,7 @@ export function loadProducts(fun) {
       return new Product(productDetails);
     });
 
-    console.log('load products')
+    // console.log('load products')
 
     fun();
   });
@@ -135,7 +130,6 @@ export function loadProducts(fun) {
   xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
 }
-*/
 
 /*
 export const products = [
