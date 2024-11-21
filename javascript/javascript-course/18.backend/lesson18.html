@@ -33,12 +33,27 @@
       //   console.log(texto);
       // });
 
-      async function getGreeting() {
-        const response = await fetch('https://supersimplebackend.dev/greeting');
-        const texto = await response.text();
-        console.log(texto);
+      // async function getGreeting() {
+      //   const response = await fetch('https://supersimplebackend.dev/greeting');
+      //   const texto = await response.text();
+      //   console.log(texto);
+      // }
+      // getGreeting();
+
+      async function postGreeting() {
+        const response = await fetch('https://supersimplebackend.dev/greeting', {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: "Antonio"
+          })
+        });
+        const text = await response.text();
+        console.log(text);
       }
-      getGreeting();
+      postGreeting();
     </script>
   </body>
 
