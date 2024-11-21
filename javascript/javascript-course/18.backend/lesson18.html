@@ -27,11 +27,18 @@
       // xhr.open('GET', 'https://supersimplebackend.dev/greeting');
       // xhr.send();
 
-      fetch('https://supersimplebackend.dev/greeting').then((response) => {
-        return response.text();
-      }).then((texto) => {
+      // fetch('https://supersimplebackend.dev/greeting').then((response) => {
+      //   return response.text();
+      // }).then((texto) => {
+      //   console.log(texto);
+      // });
+
+      async function getGreeting() {
+        const response = await fetch('https://supersimplebackend.dev/greeting');
+        const texto = await response.text();
         console.log(texto);
-      });
+      }
+      getGreeting();
     </script>
   </body>
 
