@@ -18,14 +18,20 @@
   <body>
   
     <script>
-      const xhr = new XMLHttpRequest();
+      // const xhr = new XMLHttpRequest();
 
-      xhr.addEventListener('load', () => {
-        console.log(xhr);
+      // xhr.addEventListener('load', () => {
+      //   console.log(xhr);
+      // });
+
+      // xhr.open('GET', 'https://supersimplebackend.dev/greeting');
+      // xhr.send();
+
+      fetch('https://supersimplebackend.dev/greeting').then((response) => {
+        return response.text();
+      }).then((texto) => {
+        console.log(texto);
       });
-
-      xhr.open('GET', 'https://supersimplebackend.dev/greeting');
-      xhr.send();
     </script>
   </body>
 
