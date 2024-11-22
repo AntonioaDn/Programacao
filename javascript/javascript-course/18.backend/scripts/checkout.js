@@ -1,7 +1,7 @@
 import {renderOrderSummary} from './checkout/orderSummary.js';
 import {renderPaymentSummary} from './checkout/paymentSummary.js';
 import { loadProducts, loadProductsFetch } from '../data/products.js';
-import { loadCart, loadCartFetch } from '../data/cart.js';
+import { loadCart, loadCartFetch, cart } from '../data/cart.js';
 // import '../data/cart-class.js';
 // import '../data/backend-practice.js'
 
@@ -23,9 +23,23 @@ async function loadPage() {
   renderOrderSummary();
   renderPaymentSummary();
   loadCartFetch();
+  updateCartQuantity();
 
 }
+
+function updateCartQuantity() {
+  let quantity = 0;
+
+  cart.forEach((cartItem) => {
+    quantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-return-link')
+    .innerHTML = `${quantity} items`;
+}
+
 loadPage();
+console.log(cart)
 
 /*
 Promise.all([

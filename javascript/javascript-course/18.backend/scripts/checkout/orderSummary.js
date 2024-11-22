@@ -1,4 +1,4 @@
-import {cart, removeFromCart, updateDeliveryOption} from '../../data/cart.js';
+import {cart, removeFromCart, updateDeliveryOption, saveToStorage} from '../../data/cart.js';
 import {products, getProduct} from '../../data/products.js';
 import {formatCurrency} from '../utils/money.js';
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
@@ -51,9 +51,13 @@ export function renderOrderSummary() {
               <span>
                 Quantity: <span class="quantity-label">${cartItem.quantity}</span>
               </span>
-              <span class="update-quantity-link link-primary">
+              <span class="update-quantity-link link-primary js-update-link" data-product-id="${matchingProduct.id}">
                 Update
               </span>
+              <input class="quantity-input js-quantity-${matchingProduct.id}">
+              <span class="save-quantity-link link-primary"
+              data-product-id="${matchingProduct.id}"
+              >Save</span>
               <span class="delete-quantity-link link-primary js-delete-link
                 js-delete-link-${matchingProduct.id}"
                 data-product-id="${matchingProduct.id}">
@@ -115,6 +119,15 @@ export function renderOrderSummary() {
     return html;
   }
 
+  function updateCartQuantity() {
+    let quantity = 0;
+    cart.forEach((cartItem) => {
+      quantity += cartItem.quantity;
+    });
+    document.querySelector('.js-return-link')
+      .innerHTML = `${quantity} items`;
+  }
+
   document.querySelector('.js-order-summary')
     .innerHTML = cartSummaryHTML;
 
@@ -130,6 +143,7 @@ export function renderOrderSummary() {
         container.remove();
 
         renderPaymentSummary();
+        updateCartQuantity();
       });
     });
 
@@ -141,5 +155,37 @@ export function renderOrderSummary() {
         renderOrderSummary();
         renderPaymentSummary();
       });
+    });
+
+  document.querySelectorAll('.js-update-link')
+    .forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const { productId } = link.dataset;
+        const cartItemContainer = document.querySelector(`.js-cart-item-container-${productId}`);
+        console.log(cartItemContainer);
+        cartItemContainer.classList.add('is-editing-quantity');
+      })
+    });
+
+  document.querySelectorAll('.save-quantity-link')
+    .forEach((link) => {
+      link.addEventListener('click', () => {
+        const { productId } = link.dataset;
+        cart.forEach((cartItem) => {
+          if (cartItem.productId === productId) {
+            const newValue = Number(document.querySelector(`.js-quantity-${productId}`).value);
+            if (newValue > 0 && newValue < 1000) {
+              cartItem.quantity = newValue;
+              saveToStorage();
+            }
+          }
+        })
+        const container = document.querySelector('.is-editing-quantity');
+        container.classList.remove('is-editing-quantity')
+        renderOrderSummary();
+        renderPaymentSummary();
+        updateCartQuantity();
+      })
     });
 }

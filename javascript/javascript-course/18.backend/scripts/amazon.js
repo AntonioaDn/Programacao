@@ -85,4 +85,6 @@ function renderProductsGrid() {
         updateCartQuantity();
       });
     });
+
+  updateCartQuantity();
 }

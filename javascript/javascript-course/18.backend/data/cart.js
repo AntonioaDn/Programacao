@@ -18,7 +18,7 @@ export function loadFromStorage() {
   }
 }
 
-function saveToStorage() {
+export function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -89,4 +89,9 @@ export async function loadCartFetch() {
   const dataCart = await response.text();
   console.log(dataCart);
   return dataCart;
+}
+
+export function emptyCart() {
+  cart = [];
+  saveToStorage();
 }

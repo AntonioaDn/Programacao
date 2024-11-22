@@ -1,4 +1,4 @@
-import {cart} from '../../data/cart.js';
+import {cart, saveToStorage, emptyCart} from '../../data/cart.js';
 import {getProduct} from '../../data/products.js';
 import {getDeliveryOption} from '../../data/deliveryOptions.js';
 import {formatCurrency} from '../utils/money.js';
@@ -81,7 +81,12 @@ export function renderPaymentSummary() {
           })
         });
         const order = await response.json();
+        console.log(order)
         addOrder(order);
+        const container = document.querySelector('.js-order-summary');
+        container.innerHTML = '';
+        emptyCart();
+        
       } catch (error) {
         console.log('Try again later');     
       }
