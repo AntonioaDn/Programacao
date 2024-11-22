@@ -91,27 +91,39 @@ object3.method();
 
 export let products = [];
 
-export function loadProductsFetch() {
-  const promise = fetch(
-    'https://supersimplebackend.dev/products'
-    
-  ).then((response) => {
-    return response.json();
-
-  }).then((productsData) => {
-    products = productsData.map((productDetails) => {
-      if (productDetails.type === 'clothing') {
-        return new Clothing(productDetails);
-      }
-      return new Product(productDetails);
-    });
-    // console.log('load products');
-  }).catch((error) => {
-    console.log('Unexpected error. Please try again later');
+export async function loadProductsFetch() {
+  const response = await fetch('https://supersimplebackend.dev/products');
+  const data = await response.json();
+  // console.log(data);
+  products = data.map((productDetails) => {
+    if (productDetails.type === 'clothing') {
+      return new Clothing(productDetails);
+    } 
+    return new Product(productDetails);
   });
-
-  return promise;
 }
+
+// export function loadProductsFetch() {
+//   const promise = fetch(
+//     'https://supersimplebackend.dev/products'
+    
+//   ).then((response) => {
+//     return response.json();
+
+//   }).then((productsData) => {
+//     products = productsData.map((productDetails) => {
+//       if (productDetails.type === 'clothing') {
+//         return new Clothing(productDetails);
+//       }
+//       return new Product(productDetails);
+//     });
+//     // console.log('load products');
+//   }).catch((error) => {
+//     console.log('Unexpected error. Please try again later');
+//   });
+
+//   return promise;
+// }
 loadProductsFetch();
 
 export function loadProducts(fun) {
