@@ -138,8 +138,11 @@ export function loadProducts(fun) {
     });
 
     // console.log('load products')
-
-    fun();
+    try {
+      fun();
+    } catch (error) {
+      console.log('Erro em fun.')
+    }
   });
   
   xhr.addEventListener('error', (error) => {
