@@ -152,7 +152,17 @@ export function loadProducts(fun) {
   xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
 }
-loadProducts();
+// loadProducts();
+
+export function filterByName(name) {
+  let array = [];
+  array = products.filter((product) => {
+    if(String(product.name).includes(name)) {
+      return true;
+    }
+    return false;
+  });
+}
 
 /*
 export const products = [
