@@ -7,6 +7,9 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 async function loadPage() {
   await loadProductsFetch();
   function renderHeader(order) {
+    if (order.errorMessage) {
+      return '';
+    }
     const orderId = order.id;
     const dateString = dayjs(order.orderTime).format('MMMM D');
     const totalValue = formatCurrency(order.totalCostCents);
@@ -32,6 +35,10 @@ async function loadPage() {
     return htmlHeader;
   }
   function renderProductsDetails(order) {
+    if (order.errorMessage) {
+      return '';
+    }
+    
     let htmlProductsOrder = '';
   
     order.products.forEach((productDetails) => {
