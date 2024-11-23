@@ -87,7 +87,6 @@ export function loadCart(fun) {
 export async function loadCartFetch() {
   const response = await fetch('https://supersimplebackend.dev/cart');
   const dataCart = await response.text();
-  console.log(dataCart);
   return dataCart;
 }
 

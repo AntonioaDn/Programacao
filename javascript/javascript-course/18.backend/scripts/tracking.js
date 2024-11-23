@@ -37,7 +37,8 @@ async function loadPage() {
       document.querySelector('.js-shipped').classList.add('current-status')
     } else {
       currentStatus = 'Delivered';
-      document.querySelector('.js-delivered').classList.add('current-status')
+      document.querySelector('.js-delivered').classList.add('current-status');
+      document.querySelector('.delivery-date').innerHTML.replace('Arriving', 'Delivered');
     }
   }
   
@@ -129,7 +130,20 @@ async function loadPage() {
 
   renderTracking();
   // console.log(renderFirstPart());
-  // document.querySelector('.main').innerHTML = renderFirstPart();
+  
+  document.querySelector('.js-search-button')
+    .addEventListener('click', () => {
+      const search = document.querySelector('.js-search-bar').value;
+      window.location.href = `amazon.html?search=${search}`;
+    })
+
+  document.querySelector('.js-search-bar')
+    .addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        const search = document.querySelector('.js-search-bar').value;
+        window.location.href = `amazon.html?search=${search}`;
+      }
+    });
   
   // console.log(url.searchParams.get('productId'))
   // console.log(url.searchParams.get('orderId'))
